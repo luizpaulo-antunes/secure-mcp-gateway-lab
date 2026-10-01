@@ -1,13 +1,28 @@
 # Secure MCP Gateway & Resilience Lab
 
-A sanitized TypeScript portfolio project showing how to place explicit security and reliability boundaries around MCP tools exposed through Streamable HTTP.
+> Built by a Senior QA Automation Engineer exploring reliable and secure AI-agent testing.
 
-## What this project proves
+A sanitized TypeScript portfolio project that shows how I test explicit security and reliability boundaries around MCP tools exposed through Streamable HTTP.
 
-- I can test authentication and least-privilege authorization separately.
-- I can expose read and non-destructive draft tools through MCP Streamable HTTP.
-- I can make denied actions observable without logging credentials or personal data.
-- I can design negative and abuse cases alongside the happy path.
+## Recruiter snapshot
+
+This lab demonstrates practical **QA Automation**, **API/integration testing**, and **AI-agent security testing** in TypeScript:
+
+| Area | Evidence in this repository |
+| --- | --- |
+| MCP and API integration | A real MCP client connects to the Streamable HTTP gateway, discovers tools, and invokes them in an integration test. |
+| Authorization testing | A read-only identity can read inventory but is denied when it attempts to create a restock draft. |
+| Security controls | Bearer authentication, per-tool scopes, host validation, rate limiting, input validation, and redacted audit events. |
+| Safe agent actions | The only write-capable tool creates a draft; a human approval step remains outside the tool surface. |
+
+The point is not merely to make an MCP tool callable. It is to produce evidence that identities, permissions, failure paths, and audit data behave safely.
+
+## What I am testing
+
+- Authentication is enforced before an MCP request reaches a tool.
+- Least-privilege authorization is enforced independently for each tool.
+- A denied action is observable without writing credentials or personal data to audit logs.
+- Negative and abuse cases receive the same attention as the happy path.
 
 ## Architecture
 
@@ -25,7 +40,7 @@ Host validation → Bearer auth → Rate limit → MCP transport
                          └──────── redacted audit events ─────────┘
 ```
 
-## Implemented controls
+## Security and reliability controls
 
 - localhost host-header validation to reduce DNS-rebinding risk;
 - bearer-token authentication with hashed, timing-safe comparison;
@@ -36,7 +51,16 @@ Host validation → Bearer auth → Rate limit → MCP transport
 - draft-only write behavior with human approval;
 - sanitized unit and MCP integration tests.
 
-## Quick start
+## Test strategy
+
+| Test layer | What it proves |
+| --- | --- |
+| Unit tests | Token authorization does not expose the token; sensitive fields are redacted before audit persistence; the rate limiter is available to middleware. |
+| MCP integration tests | An unauthenticated MCP initialization receives `401`; an authenticated read-only client can use `get_inventory` but cannot use `create_restock_draft`. |
+
+The integration suite starts the actual local HTTP gateway and connects through the MCP client SDK. This tests the security boundary across transport, authentication, authorization, and tool invocation rather than testing isolated functions only.
+
+## Run the test suite
 
 ```bash
 npm install
@@ -53,11 +77,7 @@ npm start
 
 The endpoint is `http://127.0.0.1:3200/mcp` by default.
 
-## Testing strategy
-
-The integration suite starts the real HTTP gateway, connects with the MCP client SDK, lists tools, calls the read tool, and proves that a read-only identity cannot create a restock draft. Unit tests cover token validation and audit redaction.
-
-See [the threat model](docs/threat-model.md) for the assets, threats, controls, and known limitations.
+See [the threat model](docs/threat-model.md) for the assets, threats, mitigations, and known limitations.
 
 ## Not production-ready
 
