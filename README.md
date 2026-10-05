@@ -1,3 +1,14 @@
+<p align="center">
+  <img src="./docs/assets/project-banner.svg" alt="Secure MCP Gateway and Resilience Lab" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/MCP-Streamable_HTTP-0EA5E9?style=flat-square" alt="MCP Streamable HTTP" />
+  <img src="https://img.shields.io/badge/Security-Least_Privilege-14B8A6?style=flat-square" alt="Least privilege security" />
+  <img src="https://img.shields.io/badge/Tests-Integration-16A34A?style=flat-square" alt="Integration tests" />
+</p>
+
 # Secure MCP Gateway & Resilience Lab
 
 > Built by a Senior QA Automation Engineer exploring reliable and secure AI-agent testing.
