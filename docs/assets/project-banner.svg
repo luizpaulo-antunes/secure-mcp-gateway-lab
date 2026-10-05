@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
+  <title id="title">Secure MCP Gateway and Resilience Lab</title>
+  <desc id="desc">Professional teal and blue project banner showing identity, policy, MCP gateway and tools.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071720"/><stop offset="1" stop-color="#07342f"/></linearGradient>
+    <linearGradient id="a" x1="0" x2="1"><stop stop-color="#14b8a6"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+  </defs>
+  <rect width="1280" height="480" rx="28" fill="url(#bg)"/>
+  <circle cx="1160" cy="30" r="260" fill="#14b8a6" opacity=".09"/><circle cx="1030" cy="500" r="280" fill="#0ea5e9" opacity=".08"/>
+  <rect x="70" y="74" width="8" height="300" rx="4" fill="url(#a)"/>
+  <text x="112" y="165" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="700">Secure MCP Gateway</text>
+  <text x="112" y="226" fill="#99f6e4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="35">&amp; Resilience Lab</text>
+  <text x="114" y="291" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21">Authentication · Least privilege · Auditability · Failure paths</text>
+  <text x="114" y="344" fill="#7dd3fc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" letter-spacing="1.3">MCP  ·  STREAMABLE HTTP  ·  INTEGRATION TESTING</text>
+  <g transform="translate(820 125)" font-family="Inter,Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <path d="M55 90H115M215 90H275M375 90H435" stroke="url(#a)" stroke-width="4" stroke-linecap="round"/>
+    <rect x="-5" y="52" width="120" height="76" rx="18" fill="#0f2f35" stroke="#14b8a6" stroke-width="2"/><text x="55" y="96" fill="#ccfbf1" font-size="17" font-weight="700">IDENTITY</text>
+    <rect x="115" y="52" width="100" height="76" rx="18" fill="#102a27" stroke="#2dd4bf" stroke-width="2"/><text x="165" y="96" fill="#d1fae5" font-size="17" font-weight="700">POLICY</text>
+    <rect x="275" y="52" width="100" height="76" rx="18" fill="#0c2a3b" stroke="#38bdf8" stroke-width="2"/><text x="325" y="96" fill="#e0f2fe" font-size="17" font-weight="700">GATEWAY</text>
+    <rect x="435" y="52" width="100" height="76" rx="18" fill="#172554" stroke="#60a5fa" stroke-width="2"/><text x="485" y="96" fill="#dbeafe" font-size="17" font-weight="700">TOOLS</text>
+    <path d="M165 160v58h320v-58" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+    <text x="325" y="248" fill="#a7f3d0" font-size="15">redacted audit evidence</text>
+  </g>
+</svg>
